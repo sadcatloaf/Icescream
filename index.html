@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DynaPuff:wght@400..700&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+        defer></script>
+    <title>Icescream Parlour</title>
+</head>
+
+<body class="debug">
+
+    <main class="container-fluid">
+        <section class="row text-warning">
+            <div class="col-5 bg-dark fs-5">
+                <section class="row">
+                    <div class="col-2">
+                        <h2>Name</h2>
+                    </div>
+                    <div class="col-2">
+                        <h2>Qty</h2>
+                    </div>
+                    <div class="col-2">
+                        <h2>Each</h2>
+                    </div>
+                    <div class="col-2">
+                        <h2>Total</h2>
+                    </div>
+                    <p>Total</p>
+                    <p>$0.00</p>
+                    <button class="fs-4">Pay</button>
+                </section>
+            </div>
+
+            <div class="col-7">
+                <section class="row">
+                    <h2>Cones</h2>
+                    <div onclick="orderCone('Waffle Cones')" class="col-4 card">
+                        <img src="https://plus.unsplash.com/premium_photo-1726718460687-821ed3830cf0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHdhZmZlbCUyMGljZWNyZWFtJTIwY29uZXN8ZW58MHx8MHx8fDA%3D"
+                            alt="Waffle Cone">
+                        <p>Waffle Cone</p>
+                        <p>$3.50</p>
+                    </div>
+                    <div onclick="orderCone('Cake Cone')" class="col-4 card">
+                        <img src="https://images.unsplash.com/photo-1705103654884-cbd03d95761a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGljZWNyZWFtJTIwY29uZXN8ZW58MHx8MHx8fDA%3D"
+                            alt="Cake Cone">
+                        <p>Cake Cone</p>
+                        <p>$1.25</p>
+                    </div>
+                    <div onclick="orderCone('Mini Cone')" class="col-4 card">
+                        <img src="https://www.gannett-cdn.com/presto/2021/05/19/PTAL/554e9c46-1eb9-4474-b4ee-702a2cec638f-Mini-IceCream-Cone.jpg?width=600&height=800&fit=crop&format=pjpg&auto=webp"
+                            alt="Mini Cones">
+                        <p>Mini Cone</p>
+                        <p>$0.75</p>
+                    </div>
+                </section>
+
+                <section class="row">
+                    <h2>IceScream</h2>
+                    <div onclick="orderIceScream('Cake Batter')" class="col-4 card">
+                        <img src="https://www.julieseatsandtreats.com/wp-content/uploads/2011/08/Cake-Batter-Ice-Cream-750x1125.jpg"
+                            alt="Cake Batter">
+                        <p>Cake Batter</p>
+                        <p>$3.25</p>
+                    </div>
+                    <div onclick="orderIceScream('Blue Moon')" class="col-4 card">
+                        <img src="https://th.bing.com/th/id/OIP.ajEJiXt6LMRqKacjGSQT4QHaEK?w=321&h=180&c=7&r=0&o=5&pid=1.7"
+                            alt="Cake Cone">
+                        <p>Blue Moon</p>
+                        <p>$3.25</p>
+                    </div>
+                    <div onclick="orderIceScream('Cotton Candy')" class="col-4 card">
+                        <img src="https://blog.shopsweetsandtreats.com/wp-content/uploads/CottonCandyIceCream2STBBG-1.jpg"
+                            alt="Cotton Candy">
+                        <p>Cotton Candy</p>
+                        <p>$3.25</p>
+                    </div>
+                </section>
+
+                <section class="row">
+                    <h2>Topping</h2>
+                    <div onclick="orderToppings('Gummy Bears')" class="col-4 card">
+                        <img src="https://images.unsplash.com/photo-1592593391430-7f7af152424d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxzcG9va3klMjBjYW5keXxlbnwwfHwwfHx8MA%3D%3D"
+                            alt="GummyBears">
+                        <p>Gummy Bears</p>
+                        <p>$0.50</p>
+                    </div>
+                    <div onclick="orderToppings('Worms')" class="col-4 card">
+                        <img src="https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHxzcG9va3klMjBjYW5keXxlbnwwfHwwfHx8MA%3D%3D"
+                            alt="Worms">
+                        <p>Worms</p>
+                        <p>$0.50</p>
+                    </div>
+                    <div onclick="orderToppings('Sprinkles')" class="col-4 card">
+                        <img src="https://media.istockphoto.com/id/492074426/photo/orange-and-black-sprinkles-halloween-background.jpg?s=2048x2048&w=is&k=20&c=kPdwLYe2okMUgU0Dk439FOdvwGSom24rCJQ5to_t7cA="
+                            alt="Sprinkles">
+                        <p>Sprinkles</p>
+                        <p>$0.25</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+
+
+
+</html>
